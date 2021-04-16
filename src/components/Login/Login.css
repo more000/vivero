@@ -1,0 +1,23 @@
+.container-form {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+}
+
+.container-form__input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.container-form__button {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
