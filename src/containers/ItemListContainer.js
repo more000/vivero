@@ -1,23 +1,29 @@
-import React from 'react';
-import CounterContainer from './CounterContainer/CounterContainer';
 
-export default class ItemListContainer extends React.Component {
-    constructor(props){
-        super(props)
+import React, { useState, useEffect } from "react";
+import ItemCount from "../components/ItemCount";
+import ItemList from "../components/ItemList";
 
-/*          this.state = {
-            greeting: 'Hola'
-        } */
-    }
-    render(){
-        return(
-            <div>
-{/*                 <p>
-                    {this.props.greeting}
-                </p> */}
-                <CounterContainer />
-            </div>
 
-        )
-    }
+const itemsDB = require("../assets/data/itemsDB.json"); 
+
+
+export default function ItemListContainer() {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setItems(itemsDB)
+            }, 2000)
+    }, []);
+
+    return (
+        <div>
+            <ItemCount maxStock={5}/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <ItemList itemsInput={items} />
+        </div>
+  );
 }
