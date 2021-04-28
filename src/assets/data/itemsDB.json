@@ -1,57 +1,55 @@
 [
     {
         "id": 1,
-        "title": "Producto1",
+        "title": "Azalea",
         "description": "Description1",
         "price": 1,
-        "pictureURL": ""
+        "pictureURL": "/img/azalea.png",
+        "stock": 5
     },
 
     {
         "id": 2,
-        "title": "Producto2",
+        "title": "Crisantemo",
         "description": "Description2",
         "price": 2,
-        "pictureURL": ""
+        "pictureURL": "/img/crisantemo.png",
+        "stock": 5
     },
 
     {
         "id": 3,
-        "title": "Producto3",
+        "title": "Estrella federal",
         "description": "Description3",
         "price": 3,
-        "pictureURL": ""
+        "pictureURL": "/img/estrella-federal.png",
+        "stock": 5
     },
 
     {
         "id": 4,
-        "title": "Producto4",
+        "title": "Geranio",
         "description": "Description4",
         "price": 4,
-        "pictureURL": ""
+        "pictureURL": "/img/geranio.png",
+        "stock": 5
     },
 
     {
         "id": 5,
-        "title": "Producto5",
+        "title": "Jazmín del cabo",
         "description": "Description5",
         "price": 5,
-        "pictureURL": ""
+        "pictureURL": "/img/jazmin-del-cabo.jpg",
+        "stock": 5
     },
     
     {
         "id": 6,
-        "title": "Producto6",
+        "title": "Petunia",
         "description": "Description6",
         "price": 6,
-        "pictureURL": ""
-    },
-    
-    {
-        "id": 7,
-        "title": "Producto7",
-        "description": "Description7",
-        "price": 7,
-        "pictureURL": ""
+        "pictureURL": "/img/petunia.jpg",
+        "stock": 5
     }
 ]
