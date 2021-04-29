@@ -1,61 +1,42 @@
 import React, {useState, useEffect} from 'react';
-import Modal from '@material-ui/core/Modal';
 import ItemDetail from '../components/ItemDetail';
 
- export default function ItemDetailContainer({open, close, content}) {
-//export default function ItemDetailContainer({selectedItem}) {
 
-/*     function getItem(){
-        return
-    } */
-    //  const [openModal, setOpenModal] = useState(false);
-/*    const [selectedItem, setSelectedItem] = useState({});
+function getItem(){
+    return require("../assets/data/itemsDB.json")[0]
+}
+
+ export default function ItemDetailContainer() {
+
+    const [item, setItem] = useState({});
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState(0);
+    const [pictureURL, setPictureURL] = useState('');
+    const [stock, setStock] = useState(0);    
+
 
     useEffect(() => {
         const promesa = new Promise(() => {
             setTimeout(() => {
-                return selectedItem
+                setItem(getItem());
+                setTitle(item.title);
+                setDescription(item.description);
+                setPrice(item.price);
+                setPictureURL(item.pictureURL);
+                setStock(item.stock)
             }, 2000)
         })
         promesa.then(task => task)
-    }, []);    
-    
- */
-/*     const [selectedItem, setSelectedItem] = useState({});
+    }, []);
 
-     useEffect(() => {
-        const promesa = new Promise(() => {
-            setTimeout(() => {
-                setSelectedItem(selectedItem)
-            }, 2000)
-        })
-        promesa.then(task => task)
-    }, []); */
-
-/*     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedItem, setSelectedItem] = useState({});
- */
-/*      function onHandleClick(data) {
-        setTitle(data.title);
-        setDescription(data.description);
-        setPrice(data.price);
-        setPictureURL(data.pictureURL);
-        setStock(data.stock)
-        setSelectedItem(data);
-        setModalOpen(true);
-      }
- */
     return (
-        <Modal
-        open={open}
-        onClose={close}>
             <ItemDetail 
-                title={content.title}
-                description={content.description}
-                price={content.price}
-                pictureURL={content.pictureURL}
-                stock={content.stock}
+                title={title}
+                description={description}
+                price={price}
+                pictureURL={pictureURL}
+                stock={stock}
             />
-      </Modal>
-    )
+            )
 }

@@ -42,12 +42,6 @@ export default function ItemDetail({title, description, price, pictureURL, stock
                 </CardContent>
             </CardActionArea>
             <CardActions>
-{/*                 <Button size="small" color="primary">
-                    Share
-                </Button>
-                <Button size="small" color="primary">
-                    Learn More
-                </Button> */}
                 <ItemCount maxStock={stock}/>
             </CardActions>
       </Card>    )

@@ -14,7 +14,3 @@ export default function ItemList({itemsInput, handleClick}) {
     </GridList>
 );
 }
-
-
-
-{/* <ItemDetailContainer close={() => setModalOpen(false)} open={modalOpen} content={selectedItem} /> */}
