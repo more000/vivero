@@ -4,9 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import logo from '../assets/img/flower-shop.png';
 import CartWidget from './CartWidget';
+import logo from '../assets/img/flower-shop.png';
 import './NavBar.css';
+
 
 
 const useStyles = makeStyles({
@@ -36,12 +37,14 @@ export default function CenteredTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="Todos los productos" onClick={() => history.push("/")}/>
-        <Tab label="Plantas" onClick={() => history.push("/category/1")}/>
-        <Tab label="Artículos" onClick={() => history.push("/category/2")}/>
-        <Tab label="Contacto" />
+        <Tab label="Home" onClick={() => history.push("/")}/>
+        <Tab label="Plantas" onClick={() => history.push("/plantas")}/>
+        <Tab label="Materiales" onClick={() => history.push("/materiales")}/>
+        <Tab label="Contacto" onClick={() => history.push("/contacto")}/>
         <CartWidget/>
       </Tabs>
     </Paper>
   );
 }
+
+<Button onClick={() => history.push("/posts")} color="inherit">POSTS</Button>

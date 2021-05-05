@@ -1,7 +1,9 @@
 [
     {
-        "id": 1,
-        "title": "Azalea",
+        "itemId": 1,
+        "itemName": "Azalea",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description1",
         "price": 1,
         "pictureURL": "/img/azalea.png",
@@ -9,8 +11,10 @@
     },
 
     {
-        "id": 2,
-        "title": "Crisantemo",
+        "itemId": 2,
+        "itemName": "Crisantemo",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description2",
         "price": 2,
         "pictureURL": "/img/crisantemo.png",
@@ -18,8 +22,10 @@
     },
 
     {
-        "id": 3,
-        "title": "Estrella federal",
+        "itemId": 3,
+        "itemName": "Estrella federal",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description3",
         "price": 3,
         "pictureURL": "/img/estrella-federal.png",
@@ -27,8 +33,10 @@
     },
 
     {
-        "id": 4,
-        "title": "Geranio",
+        "itemId": 4,
+        "itemTitle": "Geranio",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description4",
         "price": 4,
         "pictureURL": "/img/geranio.png",
@@ -36,8 +44,10 @@
     },
 
     {
-        "id": 5,
-        "title": "Jazmín del cabo",
+        "itemId": 5,
+        "itemName": "Jazmín del cabo",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description5",
         "price": 5,
         "pictureURL": "/img/jazmin-del-cabo.jpg",
@@ -45,11 +55,57 @@
     },
     
     {
-        "id": 6,
-        "title": "Petunia",
+        "itemId": 6,
+        "itemName": "Petunia",
+        "categoryId": 1,
+        "categoryName": "Plantas",
         "description": "Description6",
         "price": 6,
         "pictureURL": "/img/petunia.jpg",
+        "stock": 5
+    },
+
+    {
+        "itemId": 7,
+        "itemName": "Maceta rectangular",
+        "categoryId": 2,
+        "categoryName": "Artículos",
+        "description": "Description7",
+        "price": 6,
+        "pictureURL": "/img/maceta-rectangular.jpg",
+        "stock": 5
+    },
+
+    {
+        "itemId": 8,
+        "itemName": "Maceta cónica",
+        "categoryId": 2,
+        "categoryName": "Artículos",
+        "description": "Description8",
+        "price": 6,
+        "pictureURL": "/img/maceta-conica.jpg",
+        "stock": 5
+    },
+
+    {
+        "itemId": 9,
+        "itemName": "Herbicida",
+        "categoryId": 2,
+        "categoryName": "Artículos",
+        "description": "Description9",
+        "price": 6,
+        "pictureURL": "/img/herbicida.png",
+        "stock": 5
+    },
+
+    {
+        "itemId": 10,
+        "itemName": "Semillas de hortalizas",
+        "categoryId": 2,
+        "categoryName": "Artículos",
+        "description": "Description10",
+        "price": 6,
+        "pictureURL": "/img/semillas-hortalizas.png",
         "stock": 5
     }
 ]

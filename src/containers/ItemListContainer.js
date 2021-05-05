@@ -1,54 +1,38 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../components/ItemList";
-import ItemDetailContainer from "./ItemDetailContainer";
-import ItemDetail from "../components/ItemDetail";
+import {useParams} from 'react-router-dom';
 
-function getItems(){
-    return require("../assets/data/itemsDB.json")
+
+function getItems(categoryId){
+    let itemlist = require("../assets/data/itemsDB.json");
+    let res = [];    
+    if (typeof categoryId == "undefined") {res = itemlist}
+    else {
+        for (let i=0; i<itemlist.length; i++) {
+            if (itemlist[i].categoryId == categoryId) {res.push(itemlist[i])} 
+        }    
+    }
+    return res
 }
 
 
 export default function ItemListContainer() {
     const [items, setItems] = useState([]);
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(0);
-    const [pictureURL, setPictureURL] = useState('');
-    const [stock, setStock] = useState(0);    
-    const [modalOpen, setModalOpen] = useState(false);
 
-    function onHandleClick(data) {
-        setTitle(data.title);
-        setDescription(data.description);
-        setPrice(data.price);
-        setPictureURL(data.pictureURL);
-        setStock(data.stock) 
-        setModalOpen(true);
-      }
+    const {categoryId} = useParams();
 
     useEffect(() => {
         const promesa = new Promise(() => {
             setTimeout(() => {
-                setItems(getItems())
+                setItems(getItems(categoryId))
             }, 2000)
         })
         promesa.then(task => task)
-    }, []);
-
-     const content = (
-        <ItemDetail 
-            title={title}
-            description={description}
-            price={price}
-            pictureURL={pictureURL}
-            stock={stock}
-        /> 
-    )
+    }, [categoryId]);
 
     return (
         <div>
-            <ItemList handleClick={onHandleClick} itemsInput={items} />
-            <ItemDetailContainer close={() => setModalOpen(false)} open={modalOpen} content={content}/>
+            <ItemList itemsInput={items} />
         </div>
   );
 }
