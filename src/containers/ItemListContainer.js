@@ -9,7 +9,7 @@ function getItems(categoryId){
     if (typeof categoryId == "undefined") {res = itemlist}
     else {
         for (let i=0; i<itemlist.length; i++) {
-            if (itemlist[i].categoryId == categoryId) {res.push(itemlist[i])} 
+            if (itemlist[i].categoryId === categoryId) {res.push(itemlist[i])} 
         }    
     }
     return res

@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function ItemCount({maxStock, handleClick}){
+export default function ItemCount({maxStock, onAdd}){
 
     const classes = useStyles();
 
@@ -45,10 +45,10 @@ export default function ItemCount({maxStock, handleClick}){
         setCount(Math.max(count - 1,0))
     }
 
-    const onAdd = () => {
-        alert(`Seleccionaste ${count} unidades del producto`)
-        setCount(0)
-    }
+/*     const onConfirm = () => {
+    setQuantity(count);
+    onAdd(quantity);
+} */
 
 
     return(
@@ -81,7 +81,7 @@ export default function ItemCount({maxStock, handleClick}){
         </Grid>
         <div>Stock disponible: {maxStock} unidades</div>
         <hr/>
-        <button className={classes.container} onClick={onAdd}>Agregar al carrito</button>
+        <button className={classes.container} onClick={onAdd(count)}>Agregar al carrito</button>
       </Grid>
     )
 }
