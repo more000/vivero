@@ -18,13 +18,17 @@ const useStyles = makeStyles({
     },
   });
 
+
 export default function ItemDetail({title, description, price, pictureURL, stock}) {
     const classes = useStyles();
-    
-    function onAdd(count) {
-        console.log(`${count} products added`)
-    }
 
+    const [quantity, setQuantity] = useState(0);
+
+    const handleAdd = (number) => {
+        setQuantity(number);
+//        console.log(`${quantity} productos fueron agregados`);
+    }
+        
     return (
         <Card>
             <CardActionArea>
@@ -46,7 +50,7 @@ export default function ItemDetail({title, description, price, pictureURL, stock
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <ItemCount maxStock={stock} onAdd={onAdd}/>
+                <ItemCount maxStock={stock} handleAdd={handleAdd}/>
             </CardActions>
       </Card>
       )

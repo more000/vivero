@@ -8,7 +8,7 @@ export default function ItemList({itemsInput}) {
     <GridList cellHeight={320} cols={3} container spacing={5}>
         {itemsInput.map((item) => {
             return (
-                <Item key={item.id} item={item}/>
+                <Item key={item.itemId} item={item}/>
             )
         })}
     </GridList>

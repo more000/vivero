@@ -8,7 +8,7 @@ function getItem(itemId){
     let res = {};
 
     for (let i=0; i<listItem.length; i++) {
-        if (listItem[i].itemId === itemId) {
+        if (listItem[i].itemId == itemId) {
             res = listItem[i]
         } 
     } 

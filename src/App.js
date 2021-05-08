@@ -30,6 +30,9 @@ function App() {
         <Route path="/item/:itemId">
           <ItemDetailContainer/>
         </Route>
+        <Route path="/cart">
+          
+        </Route>
       </Switch>
     </Router>
   );

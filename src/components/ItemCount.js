@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import Grid from '@material-ui/core/Grid';
-import { IconButton, OutlinedInput } from '@material-ui/core';
+import { Button, IconButton, OutlinedInput } from '@material-ui/core';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router';
+import CustomButton from '../components/CustomButton'; 
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,11 +30,15 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-export default function ItemCount({maxStock, onAdd}){
+export default function ItemCount({maxStock, handleAdd}){
 
     const classes = useStyles();
 
-    var [count, setCount] = useState(0);    
+    const history = useHistory();
+
+    var [count, setCount] = useState(0);
+
+    const [quantity, setQuantity] = useState(0);
     
     const incrementCount = () => {
         setCount(Math.max(count + 1,0))
@@ -45,11 +52,11 @@ export default function ItemCount({maxStock, onAdd}){
         setCount(Math.max(count - 1,0))
     }
 
-/*     const onConfirm = () => {
-    setQuantity(count);
-    onAdd(quantity);
-} */
-
+    const onAdd = () => {
+      handleAdd(count);
+      setQuantity(count);
+      alert(`Seleccionaste ${count} unidades del producto`);
+    }
 
     return(
         <Grid className={classes.container} container spacing={3}>
@@ -81,7 +88,7 @@ export default function ItemCount({maxStock, onAdd}){
         </Grid>
         <div>Stock disponible: {maxStock} unidades</div>
         <hr/>
-        <button className={classes.container} onClick={onAdd(count)}>Agregar al carrito</button>
+        <CustomButton quantity={quantity} history={history} onAdd={onAdd}  />
       </Grid>
     )
 }
